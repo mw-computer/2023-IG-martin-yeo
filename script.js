@@ -14,7 +14,7 @@ req.onreadystatechange = function() {
                 var element = this;
                 this.timerID = setTimeout( function() {
                     element.classList.add("image-magnified");
-                }, 500);
+                }, 1000);
             }
             div.onmouseout = function() {
                 clearTimeout(this.timerID);
@@ -46,15 +46,19 @@ function selectAll(btn) {
 }
 
 function slideShow(btn) {
-    var images = document.querySelectorAll(".image");
+    var images = document.querySelectorAll(".image-selected");
     var index = 0;
+    images[index].classList.remove("image-selected");
     images[index].classList.add("image-slideshow");
     var intervalID = setInterval(function() {
-        images[index++].classList.remove("image-slideshow");
+        images[index].classList.remove("image-slideshow");
+        images[index].classList.add("image-selected");
+        index++;
         if(index < images.length) {
+            images[index].classList.remove("image-selected");
             images[index].classList.add("image-slideshow");
         } else {
             clearInterval(intervalID);
         }
-    }, 1000);
+    }, 2000);
 }

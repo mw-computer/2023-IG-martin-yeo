@@ -15,11 +15,15 @@ body{
   background-color:white;
 }
 .image-selected > img{
+  height: 300px;
+  width:300px;  
   opacity: 0.5;
 }
+
 .image > img{
   height:100%;
 }
+
 .image-magnified{
   z-index:1;
 }
@@ -33,7 +37,7 @@ body{
 }
 
 .image-slideshow{
-  z-index:1;
+  z-index:2;
   width:100vw;
   height:100vw;
   position:fixed;
@@ -46,7 +50,7 @@ body{
 }
 
 .image-slideshow > img{
-  z-index:2;
+  z-index:3;
   width:50vw;
   height:50vw;
   position:fixed;
